@@ -1,0 +1,25 @@
+{
+  "name": "bot-laptop-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "actionsLoader.js",
+  "dependencies": {
+    "@slack/rtm-api": "^5.0.1",
+    "@slack/web-api": "^5.0.1",
+    "dotenv": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trandiepbang/abot_4laptop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trandiepbang/abot_4laptop/issues"
+  },
+  "homepage": "https://github.com/trandiepbang/abot_4laptop#readme"
+}

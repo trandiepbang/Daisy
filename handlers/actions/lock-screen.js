@@ -7,10 +7,6 @@ module.exports = {
         await rtm.sendMessage(`# Lock down comand received`, message.channel);
         await rtm.sendMessage(`# Executing ...`, message.channel);
         ls = spawn(path.join(config.shell_script_folder, 'lock-screen.sh'));
-        ls.stderr.on('data', async data => {
-            await rtm.sendMessage(`# Something wrong ${data}`, message.channel);
-        });
-
         ls.on('close', async () => {
             await rtm.sendMessage(`# Locked down ...`, message.channel);
         });

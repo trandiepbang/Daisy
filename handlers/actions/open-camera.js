@@ -1,6 +1,4 @@
-const {
-    spawn
-} = require('child_process');
+const { spawn } = require('child_process');
 const fs = require('fs');
 const config = require('../../config');
 const path = require('path');

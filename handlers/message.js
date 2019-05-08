@@ -5,9 +5,17 @@ function getAction(actions, commandText) {
 }
 
 module.exports = async (rtm, webClient, message, actions) => {
-    console.log(message);
-    if (message.type !== 'message' || !message.text) return console.log('!!! Message empty or type not message');
-    const commandText = message.text.toLowerCase().trim();
-    if (!command[commandText]) return console.log('!!! Command not found');
-    return getAction(actions, command[commandText]).run(rtm, webClient, message);
+    let messageType = message.type,
+        messageText = message.text;
+    if (messageType !== 'message' || !messageText) {
+        return rtm.sendMessage('!!! Message empty or type not message', message.channel);
+    }
+
+    messageText = messageText.toLowerCase().trim();
+    if (!command[messageText]) {
+        return rtm.sendMessage('Command not found', message.channel);
+    }
+
+    const actionsFunc = getAction(actions, command[messageText]);
+    return actionsFunc.run(rtm, webClient, message);
 }
